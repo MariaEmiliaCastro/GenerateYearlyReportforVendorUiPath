@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>611,1727</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>866,2634</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_DownloadAllMonthlyReports_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,62 +84,54 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_DownloadAllMonthlyReports" sap:VirtualizedContainerService.HintSize="876,2552" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_DownloadAllMonthlyReports" sap:VirtualizedContainerService.HintSize="876,2569" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="arrMonths">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;}" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Month">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">January</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;}]" Name="arrMonths" />
+      <Variable x:TypeArguments="x:String" Default="January" Name="Month" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="834,2460" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="328f0e36-e559-499f-87de-6f629a800502" Version="V2">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="834,2477" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="328f0e36-e559-499f-87de-6f629a800502" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="800,2244" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="800,2260" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vendor TaxID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="758,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Text="[in_VendorTaxID]" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vendor TaxID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="758,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Text="[in_VendorTaxID]" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="468, 370, 485, 34" ElementType="InputBox" FriendlyName="'INPUT vendorTaxID'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="92a9557e-910b-4734-914c-aff4ee0a4f7f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGCSURBVHhe7dgxisJQGIXR2f/aJCtIaaEgIkJAJeYNd0iCFlMa/+IcuEVeXv+R/DQAoCSRBoCi3iI9DEPr+751Xdd2u52ZmZltsHQ3/U2HX62Rzotc2u/37XQ6tfP5bGZmZhss3U1/0+HXUK+RTsFz4Xq9tvv93p7Pp5mZmW2wdDf9TYfT48Ua6dT7crm0cRzbNE3zKQDwaelu+psOp8eLNdL5J3673QQaAL4g/U2H0+PFW6TzyQ0AfEc6LNIAUJBIA0BRIg0ARYk0ABQl0gBQlEgDQFEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAUJdIAUJRIA0BRIg0ARYk0ABQl0gBQlEgDQFEiDQBFiTQAFCXSAFCUSANAUSINAEWJNAAU9W+ku65rj8djfgIAtpYOp8eLNdJ937fD4dCmaZpPAICtpL/pcHq8WCM9DMNfvY/HYxvHcT4FAD4t3U1/0+H0eLFGOvIiBc+l/BM3MzOzzy/dTX9fAx1vkQYA6hBpACiptV86OHKi1C+BXwAAAABJRU5ErkJggg==" InformativeScreenshot="bac547e57b25cbe7e1d82711eaf110a7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="468, 345, 93, 20" ElementType="Text" FriendlyName="'Vendor TaxID'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Vendor TaxID:' check:innerText='Vendor TaxID:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAYCAYAAADqK5OqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVGhD7ZXtjcMgDIZvJ+ZqVom6STJJ1TEqdQcuJPiD15BQNb2iE6/kHyVgGz/G/fFdX1eH0IA6hAbUITSgDqEBdQgNqENoQBHC008X551zfrxtK6K7H5d15wY/PeLSmbqNa9xhfsaFc/Sch9Vvyew960W+ycf9mo/hrvdtw4H4JXDSeDAWqdbhy/rPEIJdpqXF9yXj6DH5YT04Lr0vogAUML1c+jp470y+gqX+5GXFbzkInEu0pAHo/OhHuvxBg1DOOoaBpIrF32gNalOCkIKVe3Jc8gNgkv8EcmYOQfDUpMjFjuAiydhDszHBOHENcbOjrjYQ6HWDCSQ9nu2oroOwCKdIDQQ+FDdx0VcnlIzqbOhihkBBwZ9c3oJDH/mChN8C4aj4JAMBhcUKwmZQ36ohFIqOSiHwBcOYocvTyLEdyBYTtMnEMwA1KUYCkmIo0EE1e3ZUhLBT6CBuKoj1YQjicLiO4GAHQtzzPoTMaws6GwJ2Pv5eJS8wmC5wNYSsXysDgQ9Gk4IVCqR0BEF8kw+5KMXhJjBxye/7EDBP+q6LxWtkqpvrIGDeZVkI6jBe1CQWrZwMQEh8p8ZFxxFBxj7Og2CMIVCMbRRjY5QgZE3BK42nDARV7MwzQhDSsZJMGUIQXTDYcsl5ex3az/6sfh+CyYH//zafWHTJZ4NSDQHr9wqErr9Vh9CAOoQG1CE0oA6hAXUIDahD+Lq8/wWcndZhbnQnJwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="758,1895" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrMonths]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="758,1908" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrMonths]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="722,1770" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="722,1782" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -153,59 +145,53 @@
                         <InArgument x:TypeArguments="x:String">[item]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selected: &quot; + item]" />
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Month'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selected: &quot; + item]" />
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Month'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="667, 459, 8, 4" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span' isleaf='1' parentid='searchForm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='searchForm' tag='SPAN' class='caret' aaname='' /&gt;" Guid="292942ab-c1b4-420f-8c11-2362cde463e4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA7SURBVChTY/hPIiBfw4wZM/4bGxtjxSA5GECxYebMmXgVgwCGk5BtQlcMAlj9AFKITTEIkO9p4sD//wDrZ1g7/CN1iwAAAABJRU5ErkJggg==" InformativeScreenshot="cecc576cd6edac47b6f225f7202a9023.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="468, 419, 47, 20" ElementType="Text" FriendlyName="'Month'" FullSelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' type='' class='' check:innerText='Month:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAAYCAYAAABXysXfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVFhH7ZQNDoMgDIV3J84lVyHeBE9iPIaJd+j4aaEg6Excxgwv6bIV7OtXYS94kDpMq+owrarDtKoIs2qQQoBwIUGvmLeaFeZNDBo2TN+jBZRQ5tNrm6TzkdN1lwqMADVj3mgZY/5eGAti634ZRoxUngwxEpgN9MDWWFNWNAQ18dq0J6trwg6Qw8Qhpicl1GUDt9rDDAqUaxBNMS9HhesEk4NQROPkjfJwgzqG2QUb4gUYDYsr6Jvyxc33Oa67onSPmEloBN9qgKG3vHumfsyO9tRUhNnQVE4LTt8U4utme3k6aFzdk66XGuXHDDOxB8zUVIYJptLn7GQzGDL9A5j0PrjCGcyVY/ZjGNYYXegcJpjksf8DOIfxYQE+gSkf8QOY099OOVA6vXMYPrQ7YR6gDtOqOkyr6jBtCuAN4vIxtm3iRTYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click to select Month" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click to select Month" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="469, 512, 218, 26" ElementType="Text" FriendlyName="'February'" FullSelectorArgument="&lt;webctrl aaname='February' aria-role='option' tag='A' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='February' aria-role='option' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, Month)]" Guid="1c185983-e08e-46c1-917d-7f881b9cb272" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN4AAAAeCAYAAABDj6ADAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVHhe7dqxjtowHIDxPgIjT9AX4Dm6duAdLuojdOsYXdUVsXRhqZKpEyNzxGMcYkUsSK7/thNsYo4kEJKevp9k6YjdXJD4ZB/qp91upxaLhToej0oURaHm87maTqdqMpkwGIyOQxqSlqQpIY1Ja9JcFd7hcDATp9PJLALwGNKUtCWN1cID0D/CAwZAeMAACA8YAOEBAwjCWy6X7jKAPklrVXir1cpdBtAnaa0Kb71eu8sA+iStVeFtNht3+ZH2KnuZqdksNlK1daves33Va1+brAT+D9LaU8JL7f+W6YTw8NGMJ7wiDXZDf70NL1VpNZ+o7M1N6j0z1Ttnlid27iVT+7dMJcGaerzmdXW/+lyayz1kLlG/foTz5XtK8r17DbQzjvBMdN6x8yKcMpLqHmZ9OS/hXYRxIzzzswRqXmku+vL+9vd5zxN9vmbHZCDmaeEFu4sZZRjxMPeyg/mhXN1xbHjBv2+w44XCe9TXhvP+swFdjGDHcztWbHjhXR7rznF0D88E5P2+6+GFzyA/X38/wG2jCe+9D7L/oS+d42gf3jm48rgY3sNfW5HjpjmeylqOmbjPCMLzj41x9RDuOWrGnqdBeGaNvmeuA6zNAe2MIDwt+LJEhDGaELx5u2PFdyvLXqtiNiGG4Z1Dt69vHTWFfY4b7wVoYBzhaZd/b/k7oHzgkzwzMdl5P9JYeJr7ptIMfUTc+l+IlCG6kRYuPjd/Lbzat5tAR08I7wOR8GJBAi0RXguyE3LMxCMQXhPB34jA/QgPGADhAQMgPGAAhAcMIAjv95+/7jKAPgXhffn2010G0KcgvM9fv7vLAPpkw9upf5j2orERvtaBAAAAAElFTkSuQmCC" InformativeScreenshot="60a5c7a73895a5ed40d01be0781c1e65.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                              <uix:Target DesignTimeRectangle="468, 419, 47, 20" ElementType="Text" FriendlyName="'Month'" FullSelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' type='' class='' check:innerText='Month:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAAYCAYAAABXysXfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVFhH7ZQNDoMgDIV3J84lVyHeBE9iPIaJd+j4aaEg6Excxgwv6bIV7OtXYS94kDpMq+owrarDtKoIs2qQQoBwIUGvmLeaFeZNDBo2TN+jBZRQ5tNrm6TzkdN1lwqMADVj3mgZY/5eGAti634ZRoxUngwxEpgN9MDWWFNWNAQ18dq0J6trwg6Qw8Qhpicl1GUDt9rDDAqUaxBNMS9HhesEk4NQROPkjfJwgzqG2QUb4gUYDYsr6Jvyxc33Oa67onSPmEloBN9qgKG3vHumfsyO9tRUhNnQVE4LTt8U4utme3k6aFzdk66XGuXHDDOxB8zUVIYJptLn7GQzGDL9A5j0PrjCGcyVY/ZjGNYYXegcJpjksf8DOIfxYQE+gSkf8QOY099OOVA6vXMYPrQ7YR6gDtOqOkyr6jBtCuAN4vIxtm3iRTYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
+                        <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="184, 125, 201, 26" ElementType="Text" FriendlyName="'December'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' aria-role='option' tag='A' /&gt;&quot;, Month)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='December' aria-role='option' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, Month)]" Guid="dc8460f2-05d8-4cb4-b548-bde014038b01" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAeCAYAAACPFproAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7ZrLjYMwEEC3my2AusKWglLCdgBFRDmuUkY+l9wjecEYGCZ8MlESst73JEvB4wEjzcNzyMfhcHCbzcYBwDTn89kPpAG4EaQBMII0AEaQBsAI0gAYQRoAI0gDYARpAIwgDYCR50vzk7kkSa7HKnensOSt2OcuTVKX78M1gOI10gwIslu/qThIAzMsJo0rZ/JV4tJCRNSplP2E+cCpSEVcFfZEbiVoWuz882SuFzesb/cRpMnW4lnrXR1r2bmsial4tce0yNu4fgf4+ywoTZCgKThf9FlZjgH9xddxeT2TW8uhr4UoMt/nlvF2z7XcnRi1MJ0MfflrsZXQEBWLStPF6sIbPFl8sQ6cSi1zuUEScRpcSeZFCIU+1J6J9T3RG3yOiI+9L0RBT5rvr88w/UBukka1O3L4AtVfd8lc7og0vT1paaRQJUIk2dL1B9L8FxaVpvtqT0lRMS/NeG4o9EdKI++lQJr4WVAa2XJNtV8V8+3ZeO490oTfDdX6G08SpImfxaTxhSznfWHKYlUyiML1yOKeybVLI9fXJ1knpb7ui4I08fMaaaoi1GOgxfEFJ9bo00PHZUs2lXtPe5bL++m9NmI1Q9wLaeLn+dIARAbSABhBGgAjSANgBGkAjPSkecrfaAAiA2kAjLTSHI9HpAEwgDQARrw02+3WXS6XMAUA4zj3C5MI3KCnRvAIAAAAAElFTkSuQmCC" InformativeScreenshot="61223d7bf7a2eef33b17ab7a6a64dca6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click to select year" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click to select year" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="667, 528, 8, 4" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span' idx='2' isleaf='1' parentid='searchForm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='caret' isleaf='1' parentid='searchForm' tag='SPAN' aaname='' /&gt;" Guid="453b409c-5ea5-43c2-84e4-e60482a9d888" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA8SURBVChTY/hPIiBfw4wZM/4bGxtjxTNnzoSqQrMBmyaQGDLAcBKyJmSTYQCrH0Ca0E2GAfI9TRz4/x8A7aRYPjtGAAIAAAAASUVORK5CYII=" InformativeScreenshot="f3014d59e1eb255fb3d911e08c03eb74.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="468, 488, 34, 20" ElementType="Text" FriendlyName="'Year'" FullSelectorArgument="&lt;webctrl aaname='Year:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Year:' tag='LABEL' type='' class='' check:innerText='Year:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEESURBVEhL7ZNhDoMgDIV3J84lVyHeBE9iOIbJ7tABtlAKbpLNxR+8pIkWTL++1gfcVAOsVwOsVwOsVwnMzQqU8jE7zKBWs+eVAXFyqZhjDkwEUGBWTMET7CRz/1E5SnJnsh7JYy16f2cuplwMDXbDg6jcHAVviKZiZjaFzYIOz1iTJHaMO0RF8ghLKAo6z9+2z9m6UISGz4F50UUMvdB1Ksx2DR3Od7jofnb1cI8bqsG8kjNFF/WYUohCpTM12Jl9bYKlXSsKvgGLDUiHjh37MVhjlFzVrlAjl4OxEYuIhcRu5vgAdnr5gw7AgiQcX/ziLHwrfo7vwW6gAdarAdarAdYngBfy5AUmfjIPaQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click to select the 2021 year" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click to select the 2021 year" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="469, 607, 218, 26" ElementType="Text" FriendlyName="'2021'" FullSelectorArgument="&lt;webctrl aaname='2021' aria-role='option' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='2021' aria-role='option' tag='A' type='' class='' check:innerText='2021' /&gt;" Guid="0b99d968-e958-4402-9b24-f0698513e0eb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN4AAAAeCAYAAABDj6ADAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF6SURBVHhe7dnNjYMwEEDh7Ym6QitWOiFFcI4oI5AevLE9/BlCNgdm1tL7JCQwkNvTEPjp+963besBnC+0FpojPEAR4QEGCA8wQHiAAcIDDBAeYIDwAAOEBxggPMCAUnidd1Xlq3G7drI+Wp+vb09ZT563er63qn3zkBOZeN3mt4H/RyG8FNUc09M3l6PjdL27p6MUnXutirtbH4spTsJDAc4Pby+UsHZpXsnJfnZ+nlx5lEFaG8P0j8bXcRI6766EhzIoTLytGJaEt9yfvJlqyXoihvAa2e8ID4UwCG/nUTKPJU6x/fB2QxWEh1IohycvURZxfBNevPbg5QrhoRSK4W2jC/76qPkpuoDwUAqd8OQFSP6ZIDp8uZLEoN7+55sRHkqhEF6adLvRRV9+TjhAeCjF6eGlcMLEyrdlTPIYKlse4fq+/JoZ4aEUChMPQI7wAAOEBxggPMAA4QEGCA8wQHiAAcIDDEzhDcNAeICS0FpojvAARSm8wf8Ciuitg384TUsAAAAASUVORK5CYII=" InformativeScreenshot="dac614cd8d574f29cef66260e2a3230b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="468, 562, 134, 34" ElementType="Button" FriendlyName="'Download Report'" FullSelectorArgument="&lt;webctrl id='buttonDownload' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='buttonDownload' tag='BUTTON' type='button' class='btn btn-primary' aaname='Download Report' check:innerText='Download Report' /&gt;" Guid="110ec45a-f557-418b-91d1-d1ae223454d6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAmCAYAAAAbWQPxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANySURBVHhe7Zy7blNBEIZ5IiTCI1EjUdDAS0TiGRAtaQIVLxC5RamcgnSW09hFJDfLzuxtdnfWZ0x8SfA/0q+cc/Yyt+8cx8XxKweDGQygwExWgfL7z4N79+WXu/jwzb1+/xU6Q1HviQFiQVoGhQZo0puP393Fpx/u7eef0BmKes8MeBYkLBkUoogmaIuh8xOxQEwky6AQQXiSQEnEAjGRLINCn0/aAuh8RUwkAyjQUAAFMgmgQCYBFMgkgAKZBFAgkwAKZNIeQbl1N49xg8buZtr8A+t66VZu426ulbEn697dbcnrcr4JiXd2qHhs4rgW9+rYlPYOSlc8btgJYDk1KEpDAkBrd9VcP5aeNyik2drvKgvUPH1y8OH6an4bz2Nyj0t3mddSk2gv+utBmNPeyYSPDpSRzyiOUVrd0NDkaIv1P4GiAVbtW8Ub85uFG42tqkOaU6yt22q+zOMPK+Gn22daxwElJc1FiA1r4EjndZFTc0XTqKE8HouUk272rUDZ7jNA0japjIdmlhiuFjT4dFB4nmxadUMlCBq/eX4YL3DU5yFmmdO2uKZ1JFDEWPd08ZJN5WNZLH/3+gKlfalY4bguOqkqvNxzyqe8HsVN4aKG2OXdqvmWGjUkNE/m1vsnv8GX4kPEXOWaJPLUxkdxWXR0UNQEq6KJY0rcJ0ZrSvFkoW2gTPuM4jXCuKi9n+25Rn+qCVhbX8JKrk18IpYCshjnPV80KCVpS9PSXUVzuWhUAFpDf3OifQOrvbloRp+iaWm/0ojejwkU2ZC4fwBAXmtBkKprUq4Fv/8nKPLRb/kY4CfJ0u+XrlGB1v4f143Yv2/gCJQpn1oBSyNCXlWTVXiK1IZwDHLN9j3U8TbmFn6RpzauxmXU4UHh5OT1MK8E3J6XNaW5cU7V7B1AmfDZFpXPydL8BjSGyNuoyaOGhHUppuRnlFM4lnHVT5EwXgCuz9uc8jUlLov2DkpvpTDDuV3wbWO1xHcBhbTNZz/WNjGcB0tfO3cFpfjpoUtW9oz5+a/i2ZrGZ5iiyadeXy+v7ga0a4+gQPtVfyOcUgDl2QqgQCYBFOgFCqBAJgEUyCSAApkEUCCTVFDwSikkNXylFC+pQ1LDl9TxsxcQiXrPDHgW1J+9IKMBoogm0ecTdH6i3hMDEhKyChQYbGQABWYw5/4CPKGye9ZV/FsAAAAASUVORK5CYII=" InformativeScreenshot="d7d578792f6b99864afc4d552bd73ff0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState Exists="{x:Null}" DisplayName="Checks for no report pop up" sap:VirtualizedContainerService.HintSize="680,465" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Timeout="[1s]" Version="V1">
+                    <uix:NCheckState Exists="{x:Null}" DisplayName="Checks for no report pop up" sap:VirtualizedContainerService.HintSize="680,469" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Timeout="[1s]" Version="V1">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ClickType="Single" DisplayName="Click 'push button OK'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
+                          <uix:NClick ClickType="Single" DisplayName="Click 'push button OK'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="328f0e36-e559-499f-87de-6f629a800502" Version="V1">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="1112, 170, 64, 32" ElementType="Button" FriendlyName="'push button OK'" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' /&gt;" Guid="4aaecf37-1030-41ff-a813-701379713c63" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAkCAYAAAAw55zoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHCSURBVGhD7Zq9agJBEMft8xA+Q57AUrAPvkHSBCQvYJvSKm0sLNJY2AVSxCIQGxEPFMM1JwoqIl4QvxDhn1n39rybS3ubgLPwg/0YDuanM3ugmUKhAOGMCGGEQq5vHnB1W0fm/v2iUDmr3BNCLlGGQeWeEPJb4CUhQhgihCFCGCKEIUIYIoQhQhgihPEHQrqo9NfwDwjGAZ47QrFszicY0K7vunpdHqKlYhdz5GPPSQfLQj5RGR9PEgbOEHfPX3hsrzClnd1sEiQcFdJBdUbxhzWqT/xZ6WBXSG1xSt5rd2P72Y8V7R7Raqj1WUi+tcaO5DXrn7H4NLEqJOdsKVX6tMPyMGgJ034vnPvjJbxATDYWmy5WhZRcagabJUqJMxfNjSkTLUSPLV4slYrBqpBif09J0jckcaYleE4nnPvu3GozNVgVkml8U09I9pAc9Qpgj9eaWhshVCr1JXwzj8SniV0h5taI3jIOXcG0sxuPgqTPQtStdCoz1XDf7DRWy0KIcg8Vd3uSoId+DzmXRVSIWuv+YuvqtS/knyNCGCKEIUIYIoQhQhgihCFCGCKEIUIYCSHyYzcTIn+HYEIEjQiJUcAPG6a2nyMtnRcAAAAASUVORK5CYII=" InformativeScreenshot="067d707a0044f295e69bcb60b2cb39e7.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report e mais 1 página - Trabal*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
                             </uix:NClick.Target>
@@ -213,7 +199,7 @@
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,85" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
